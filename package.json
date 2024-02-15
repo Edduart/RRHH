@@ -1,0 +1,21 @@
+{
+    "name": "rrhh",
+    "version": "0.0.1",
+    "description": "Este es el modulo de RRHH de ecomoda",
+    "main": "index.js",
+    "scripts": {
+        "start": "node app",
+        "dev": "nodemon app"
+    },
+    "keywords": [],
+    "author": "Edduart Soto, Jesus Cordero...",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.2",
+        "express": "^4.18.2"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.3"
+    }
+}
