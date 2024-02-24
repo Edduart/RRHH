@@ -10,5 +10,5 @@ router.put("/:id", userController.update);
 router.delete("/:id", userController.delete);
 
 router.get('/sesion', userController.changeView); //Esta va 1era porque sino se leera como un string a cedula
-
+//Viva la constitucion
 module.exports = router;
