@@ -8,18 +8,18 @@ class server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
+        this.middlewares();
         this.pre = "/api";
         this.paths = {
             users: this.pre + "/users",
           };
         this.routes();
-        this.middlewares();
     }
 
     middlewares() {
-        //this.app.use(cors());
+        this.app.use(cors());
         this.app.use(express.json());
-        this.app.use(express.static("/src/public"));
+        this.app.use(express.static("./src/public"));
     }
 
     listen = () => {

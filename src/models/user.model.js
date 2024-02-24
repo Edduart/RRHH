@@ -1,18 +1,18 @@
 
-const { v4: uuidv4 } = require('uuid');
+//const { v4: uuidv4 } = require('uuid');
 
 class User{
-    cedula="";
-    firtsname="";
+    nin=""; // NIN identificacion nacional
+    firstname="";
     lastname="";
     email="";
     cell_phone="";
     address="";
-    date_of_admission=new Date();
+    date_of_admission = new Date();
 
-    constructor(firtsname,lastname,email,cell_phone,address,date_of_admission){
-        this.cedula=uuidv4();
-        this.firtsname=firtsname;
+    constructor(nin,firstname,lastname,email,cell_phone,address,date_of_admission){
+        this.nin=nin;
+        this.firstname=firstname;
         this.lastname=lastname;
         this.email=email
         this.cell_phone=cell_phone;
