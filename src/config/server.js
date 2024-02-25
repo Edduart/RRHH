@@ -1,4 +1,5 @@
 const express = require('express');//asi se llama un archivo de dependencia
+const db = require("../config/dbc.js")
 const cors = require('cors');
 const path = require('path');
 
@@ -14,6 +15,15 @@ class server{
             users: this.pre + "/users",
           };
         this.routes();
+        this.startDb();
+    }
+
+    startDb() {
+        db.authenticate().then(() => {
+            console.log('conexion a la base de datos exitosa!')
+        }).catch((err) => {
+            console.log('error en la coneccion a la base de datos')
+        });
     }
 
     middlewares() {
