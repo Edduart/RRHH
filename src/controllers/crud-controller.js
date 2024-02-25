@@ -1,82 +1,94 @@
 // CONTROLADORES
 const { request, response } = require("express");
-let { users } = require("../config/db");
+//let { users } = require("../config/dbfake");
 const User = require("../models/user.model");
 
 class UserController {
 
   constructor() { }
 
-  getAll = (req = request, res = response) => {
-    console.log('This is the base URL:Request => ' + req.baseUrl);
-    return res.status(200).json({
-      user: users
-    });
-  };
-
-  getOne = (req = request, res = response) => {
-    const { cedula } = req.params;
-
-    let user = users.find((user) => {
-      if (user.cedula == cedula) {
-        return true
-      }
-    })
-    if (!user) {
-      return res.status(404).json({
-        msj: "No existe un usuario con ese numero de cedula",
-        cedula
+  getAll = async (req = request, res = response) => {
+    try {
+      const users = await User.findAll();
+      return res.status(200).json({
+        users
       });
+    } catch (error) {
+      return res.status(400).send(error)
     }
-    return res.status(200).json({
-      msj: "Todo bien en el get one",
-      user
-    });
   };
 
-  create = (req, res = response) => {
-    console.log(req.body);
-    const { nin, firstname, lastname, email, cell_phone, address } = req.body;
-    let user = new User(nin, firstname, lastname, email, cell_phone, address);
-    users.push(user)
-    return res.status(200).json({
-      msj: "Usuario creado exitosamente",
-      user
-    });
-  };
-  update = (req, res = response) => {
-    const { id } = req.params;
-    const { nin, firstname, lastname, email, cell_phone, address } = req.body;
-    let user = new User(nin, firstname, lastname, email, cell_phone, address)
-    let indice = users.findIndex((user) => {
-      if (user.nin == id) {
-        return true
+  getOne = async (req = request, res = response) => {
+    const { cedula } = req.params;
+    try {
+      const users = await User.findByPk(cedula);
+      if(users){
+        return res.status(200).json({
+          msj: "usuario encontrado",
+          users
+        });
+      } else {
+        return res.status(404).json({
+          msj: "usuario no con la cedula "+cedula+" no existe",
+        });
       }
-    })
-
-    users[indice] = user;
-    return res.status(200).json({
-      msj: "Datos actualizados",
-      user: users[indice]
-    });
+    } catch(error) {
+      return res.status(400).send(error)
+    }
   };
 
-  delete = (req, res = response) => {
+  create = async (req, res = response) => {
+    try {
+      const { cedula, nombre, apellido, correo, telefono } = req.body;
+      let create = await User.create( { cedula, nombre, apellido, correo, telefono } );
+      return res.status(200).json({
+        msj: "Usuario creado exitosamente",
+        create
+      });
+    } catch (error){
+      return res.status(400).send(error)
+    }
+  };
+  update = async (req, res = response) => {
     const { id } = req.params;
-    let indice = users.findIndex((user) => {
-      if (user.nin == id) {
-        return true
+    try {
+      const users = await User.findByPk(id);
+      if (users) {
+        const { cedula, nombre, apellido, correo, telefono } = req.body;
+
+        await User.update({ cedula: cedula, nombre: nombre, apellido: apellido, correo: correo, telefono: telefono}, { where: {cedula: id} });
+        return res.status(200).json({
+          msj: "Usuario actualizado exitosamente",
+          users
+        });
+      } else {
+        return res.status(404).json({
+          msj: "usuario no con la cedula "+id+" no existe",
+        });
       }
-    })
-
-    let user = users.splice(indice, 1)
-
-    return res.status(200).json({
-      msj: "Usuario eliminado",
-      user
-    })
+    }catch (error){
+      return res.status(400).send(error)
+    }
   };
 
+  delete = async (req, res = response) => {
+    const { id } = req.params;
+    try {
+      const users = await User.findByPk(id);
+      if(users){
+        await User.destroy( { where: {cedula: id}} ) // se debe modificar para realizar un eliminacion logica
+        return res.status(200).json({
+          msj: "usuario no con la cedula "+id+" eliminado correctamente",
+        });
+      } else {
+        return res.status(404).json({
+          msj: "usuario no con la cedula "+id+" no existe",
+        });
+      }
+    } catch (error) {
+      return res.status(400).send(error)
+    }
+  };
 
   changeView = (req = request, res = response) => {
     console.log("change view ejecutada")

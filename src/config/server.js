@@ -1,5 +1,5 @@
 const express = require('express');//asi se llama un archivo de dependencia
-const db = require("../config/dbc.js")
+const db = require("./db.js")
 const cors = require('cors');
 const path = require('path');
 

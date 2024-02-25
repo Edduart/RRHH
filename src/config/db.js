@@ -1,10 +1,19 @@
-//fake db
+const Sequelize = require("sequelize");
 
-let users = [
-    {nin: '26123456', firstname: 'Edduart', lastname: 'Soto', email: 'edduar13@gmail.com', cell_phone: 23642783754, address: 'calle 1', date_of_admission: new Date(2023,2,3)},
-    {nin: '26540995', firstname: 'Jesus', lastname: 'Cordero', email: 'example@gmail.com', cell_phone: 72425375327, address: 'calle 2', date_of_admission: new Date(2023,2,3)}
-]
+const dbConnect = new Sequelize('rrhh', 'root', 'root', {
+    dialect: 'mysql'
+});
 
-module.exports={
-    users
-}
+/*startDb = () => {
+    dbConnect.authenticate().then(() => {
+        console.log('conexion a la base de datos exitosa!')
+    }).catch((err) => {
+        console.log('error en la coneccion a la base de datos')
+    });
+}*/
+
+//startDb();
+
+dbConnect.sync({ alter: true });
+
+module.exports = dbConnect;
