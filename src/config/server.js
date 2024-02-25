@@ -18,6 +18,8 @@ class server{
         this.startDb();
     }
 
+    // inicia la conexion a la DB
+
     startDb() {
         db.authenticate().then(() => {
             console.log('conexion a la base de datos exitosa!')
@@ -32,6 +34,8 @@ class server{
         this.app.use(express.static("./src/public"));
     }
 
+    // inicia el servidor a espera por HTTP request
+
     listen = () => {
         this.app.listen(this.port, () => {
           console.log("Servidor corriendo en puerto", "localhost:" + this.port);
@@ -39,12 +43,10 @@ class server{
     }
 
     routes = () => {
-
         this.app.use((req, res, next) => {
             console.log(`START => [${new Date().toLocaleString()}] ${req.method} ${req.url}, => END`);
             next();
         });
-        
         this.app.use(this.paths.users, require("../routes/user.routes"));
     }
 }

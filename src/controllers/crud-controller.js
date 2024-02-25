@@ -1,11 +1,12 @@
 // CONTROLADORES
 const { request, response } = require("express");
-//let { users } = require("../config/dbfake");
 const User = require("../models/user.model");
 
 class UserController {
 
   constructor() { }
+
+  //funcion de leer
 
   getAll = async (req = request, res = response) => {
     try {
@@ -18,6 +19,8 @@ class UserController {
     }
   };
 
+  // funcion de buscar por id
+
   getOne = async (req = request, res = response) => {
     const { cedula } = req.params;
     try {
@@ -29,13 +32,15 @@ class UserController {
         });
       } else {
         return res.status(404).json({
-          msj: "usuario no con la cedula "+cedula+" no existe",
+          msj: "usuario con la cedula "+cedula+" no existe",
         });
       }
     } catch(error) {
       return res.status(400).send(error)
     }
   };
+
+  //funcion de crear 
 
   create = async (req, res = response) => {
     try {
@@ -49,6 +54,9 @@ class UserController {
       return res.status(400).send(error)
     }
   };
+
+  // funcion actualizar
+
   update = async (req, res = response) => {
     const { id } = req.params;
     try {
@@ -63,13 +71,15 @@ class UserController {
         });
       } else {
         return res.status(404).json({
-          msj: "usuario no con la cedula "+id+" no existe",
+          msj: "usuario con la cedula "+id+" no existe",
         });
       }
     }catch (error){
       return res.status(400).send(error)
     }
   };
+
+  // funcion de eliminiar -> SE DEBE CAMBIAR POR ELIMINACION LOGICA https://sequelize.org/docs/v6/core-concepts/paranoid/
 
   delete = async (req, res = response) => {
     const { id } = req.params;
@@ -78,17 +88,19 @@ class UserController {
       if(users){
         await User.destroy( { where: {cedula: id}} ) // se debe modificar para realizar un eliminacion logica
         return res.status(200).json({
-          msj: "usuario no con la cedula "+id+" eliminado correctamente",
+          msj: "usuario con la cedula "+id+" eliminado correctamente",
         });
       } else {
         return res.status(404).json({
-          msj: "usuario no con la cedula "+id+" no existe",
+          msj: "usuario con la cedula "+id+" no existe",
         });
       }
     } catch (error) {
       return res.status(400).send(error)
     }
   };
+
+  // prototipo para control de vistas solo prueba, deberia ser otro controlador
 
   changeView = (req = request, res = response) => {
     console.log("change view ejecutada")

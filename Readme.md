@@ -14,7 +14,13 @@ datos tanto en el presente como en el futuro.
 El departamento que nos concierne desarrollar es: 
 
 Recursos Humanos: se encarga de llevar el control del registro del personal, los contratos, los sueldos, de calcular 
-las horas extras, de las vacantes de cada área, etc. 
+las horas extras, de las vacantes de cada área, etc.
+
+-Listo crud por parte de backed, servidor y conexion a la base de datos.
+
+TODO:
+
+-Fronted (public) y consumo de API, al menos una vista para entrega de primera parte.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
