@@ -69,6 +69,28 @@ async function findById() {
   }
 }
 
+async function deleteById(){
+  const cedulaValue = cedulaInput.value;
+  console.log("Cedula ingresada:", cedulaValue);
+  console.log("evento eliminar activado")
+
+  try {
+    fetch("http://localhost:3000/api/users/"+cedulaValue, {method: "DELETE"})
+    .then((response) => {
+      if(!response.ok){
+        alert("La cedula no existe!");
+        throw new Error("La cedula no existe!");
+      }
+      console.log(response.json());
+      return 1;
+    }).catch((error) => {
+      console.log(error);
+    })
+  } catch (error) {
+    console.error(error);
+  }
+
+}
 
 // Take over form submission
 function test(){

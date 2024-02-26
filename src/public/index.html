@@ -35,6 +35,7 @@
         </div>
         <input class="botons1" name="registar" type="submit" value="Registar">
         <input class="botons1" name="actualizar" type="submit" value="Actualizar">
+        <button type="button" id="eliminarButton">Eliminar</button>
       </form>
     </section>
   </body>
@@ -43,6 +44,7 @@
     const form = document.querySelector("#registro");
     const cedulaInput = document.querySelector("#cedula");
     const buscarButton = document.querySelector("#buscarButton");
+    const eliminarButton = document.querySelector("#eliminarButton");
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -51,6 +53,10 @@
 
     buscarButton.addEventListener("click", () => {
       findById();
+    });
+
+    eliminarButton.addEventListener("click", () => {
+      deleteById();
     });
 
   </script>
