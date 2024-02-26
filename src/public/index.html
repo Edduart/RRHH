@@ -1,63 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./styles/style.css">
-    <script type="text/javascript" src="./scripts/scripts.js"></script>
+    <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">EcoModa</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">Home</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Colecciones</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Colecciones</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Colecciones</a></li>
+          <li><a href="#">En construccion</a></li>
+          <li><a href="#">En construccion</a></li>
+          <li><a href="#">En construccion</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-book-alt' ></i>
+            <span class="link_name">Prendas</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Prendas</a></li>
+          <li><a href="#">En construccion</a></li>
+          <li><a href="#">En construccion</a></li>
+          <li><a href="#">En construccion</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-pie-chart-alt-2' ></i>
+          <span class="link_name">Materiales</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Materiales</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-line-chart' ></i>
+          <span class="link_name">Categoria</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Categoria</a></li>
+        </ul>
+ 
+      <li>
+        <a href="#">
+          <i class='bx bx-compass' ></i>
+          <span class="link_name">Tallas</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Tallas</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-history'></i>
+          <span class="link_name">Historial</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">History</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name">Salir</div>
+        <div class="job">EcoModa</div>
+      </div>
+      <i class='bx bx-log-out' ></i>
+    </div>
+  </li>
+</ul>
+
+  </div>
+
+  <section class="home-section">
+   
+    <div class="home-content">
+      
+        
+      <header class="header">
+        <i class='bx bx-menu' ></i>
+        <span class="text">Empleados</span>
+        margin-right: 150px;
+        <div class="logo-header">
+            
+        </div>
+        <div class="nav-menu">
+            
+            <input type="checkbox" id="check">    
+            <label for="check" class="checkbtn">
+                
+               
+                
+            </label>
+            
+            <ul>
+                margin-right: 200px;
+                <li><a href="">Empleados</a></li>
+                margin-right: 50px;
+                <li><a href="">Departamento</a></li>
+                margin-right: 50px;
+                <li><a href="">Servicios</a></li>
+                margin-right: 50px;
+                <li><a href="">Contacto</a></li>
+                margin-right: 50px;sssssss
+                <li><a href="">Informes</a></li>
+                margin-right: 100px;margin-right: 100px;
+                <li><a href="">Soporte</a></li>
+                margin-right: 100px;asdasdasdsassssssssssss
+                
+            </ul>
+            
+        </div>
+    </header>
+    </div>
     <title>Registro Empleados</title>
-  </head>
-  <body>
-    <section class="form-register">
-      <h4>Registro Empleados</h4>
-      <form id="registro">
-        <div>
-          <label for="cedula">Cedula:</label>
-          <input type="text" id="cedula" name="cedula" value />
-          <button type="button" id="buscarButton">Buscar</button>
-        </div>
-        <div>
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" value />
-        </div>
-        <div>
-          <label for="apellido">Apellido:</label>
-          <input type="text" id="apellido" name="apellido" value />
-        </div>
-        <div>
-          <label for="correo">Correo:</label>
-          <input type="text" id="correo" name="correo" value />
-        </div>
-        <div>
-          <label for="telefono">Telefono:</label>
-          <input type="text" id="telefono" name="telefono" value />
-        </div>
-        <input class="botons1" name="registar" type="submit" value="Registar">
-        <input class="botons1" name="actualizar" type="submit" value="Actualizar">
-        <button type="button" id="eliminarButton">Eliminar</button>
-      </form>
-    </section>
-  </body>
+</head>
+<body>
+  <section class="form-register">
+    <h4>Registro Empleados</h4>
+    <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+    <input class="controls" type="text" name="cedula" id="apellidos" placeholder="Ingrese su cedula">
+    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+    <input class="controls" type="varchar" name="address" id="address" placeholder="Direccion">
+    <input class="controls" type="varchar" name="telefono" id="telefono" placeholder="Numero de telefono">
+   
+    <input class="botons1" type="submit" value="Registrar">
+    <input class="botons2" type="submit" value="Cerrar">
+   
+  </section>
+
+</body>
+
+  </section>
+  
+  
+  <div class="one"></div>
   <script>
-
-    const form = document.querySelector("#registro");
-    const cedulaInput = document.querySelector("#cedula");
-    const buscarButton = document.querySelector("#buscarButton");
-    const eliminarButton = document.querySelector("#eliminarButton");
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      sendData();
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
     });
-
-    buscarButton.addEventListener("click", () => {
-      findById();
-    });
-
-    eliminarButton.addEventListener("click", () => {
-      deleteById();
-    });
-
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
   </script>
+</body>
 </html>

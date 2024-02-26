@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script type="text/javascript" src="./scripts/scripts.js"></script>
+    <title>Registro Empleados</title>
+  </head>
+  <body>
+    <section class="form-register">
+      <h4>Registro Empleados</h4>
+      <form id="registro">
+        <div>
+          <label for="cedula">Cedula:</label>
+          <input type="text" id="cedula" name="cedula" value />
+          <button type="button" id="buscarButton">Buscar</button>
+        </div>
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" value />
+        </div>
+        <div>
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" name="apellido" value />
+        </div>
+        <div>
+          <label for="correo">Correo:</label>
+          <input type="text" id="correo" name="correo" value />
+        </div>
+        <div>
+          <label for="telefono">Telefono:</label>
+          <input type="text" id="telefono" name="telefono" value />
+        </div>
+        <input class="botons1" name="registar" type="submit" value="Registar">
+        <input class="botons1" name="actualizar" type="submit" value="Actualizar">
+        <button type="button" id="eliminarButton">Eliminar</button>
+      </form>
+    </section>
+  </body>
+  <script>
+
+    const form = document.querySelector("#registro");
+    const cedulaInput = document.querySelector("#cedula");
+    const buscarButton = document.querySelector("#buscarButton");
+    const eliminarButton = document.querySelector("#eliminarButton");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      sendData();
+    });
+
+    buscarButton.addEventListener("click", () => {
+      findById();
+    });
+
+    eliminarButton.addEventListener("click", () => {
+      deleteById();
+    });
+
+  </script>
+</html>
