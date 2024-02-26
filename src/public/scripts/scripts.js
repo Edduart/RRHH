@@ -22,7 +22,7 @@ async function sendData() {
     } else if (clickedButton.name === "actualizar"){
       const cedulaValue = cedulaInput.value;
       const response = await fetch("http://localhost:3000/api/users/"+cedulaValue, {
-        method: "POST",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json", 
         },
