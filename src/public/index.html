@@ -154,11 +154,11 @@
           <h4>Registro Empleados</h4>
           <form id="registro">
             
-            <input class="controls" type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula">
-            <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre">
-            <input class="controls" type="text" name="apellido" id="apellido" placeholder="Ingrese su Apellido">
-            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
-            <input class="controls" type="varchar" name="telefono" id="telefono" placeholder="Numero de telefono">
+            <input class="controls" type="text" pattern="[0-9]{8}" name="cedula" id="cedula" placeholder="Ingrese su cedula"  required>
+            <input class="controls" type="text" pattern="[A-Za-z]+" name="nombre" id="nombre" placeholder="Ingrese su Nombre" required>
+            <input class="controls" type="text" pattern="[A-Za-z]+" name="apellido" id="apellido" placeholder="Ingrese su Apellido" required>
+            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" required>
+            <input class="controls" type="tel" pattern="[0-9]{10}" name="telefono" id="telefono" placeholder="Numero de telefono" required>
 
             <input class="botons1" name="registar" type="submit" value="Registrar">
             <input class="botons1" name="actualizar" type="submit" value="Actualizar">
