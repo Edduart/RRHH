@@ -54,7 +54,7 @@ async function findById() {
       return response.json()
     })
     .then((data) => {
-      cedulaInput.disabled = true;
+      //cedulaInput.disabled = true;
       let { nombre, apellido, correo, telefono, fechaDeIngreso  } = data.users;
       //console.log(cedula,nombre,apellido,correo,fechaDeIngreso)
       let nombreInput = document.querySelector("#nombre");

@@ -153,11 +153,15 @@
         <section class="form-register">
           <h4>Registro Empleados</h4>
           <form id="registro">
-            
+            <label for="cedula">Ingrese la cedula (busqueda por cedula):</label>
             <input class="controls" type="text" pattern="[0-9]{8}" name="cedula" id="cedula" placeholder="Ingrese su cedula"  required>
+            <label for="nombre">Ingrese su nombre:</label>
             <input class="controls" type="text" pattern="[A-Za-z]+" name="nombre" id="nombre" placeholder="Ingrese su Nombre" required>
+            <label for="apellido">Ingrese su apellido:</label>
             <input class="controls" type="text" pattern="[A-Za-z]+" name="apellido" id="apellido" placeholder="Ingrese su Apellido" required>
+            <label for="correo">Ingrese su correo:</label>
             <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" required>
+            <label for="correo">Ingrese su telefono:</label>
             <input class="controls" type="tel" pattern="[0-9]{10}" name="telefono" id="telefono" placeholder="Numero de telefono" required>
 
             <input class="botons1" name="registar" type="submit" value="Registrar">
@@ -171,40 +175,36 @@
     </section>
     <div class="one"></div>
     <script>
-  let arrow = document.querySelectorAll(".arrow");
-  for (var i = 0; i < arrow.length; i++) {
-    arrow[i].addEventListener("click", (e)=>{
-   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
-   arrowParent.classList.toggle("showMenu");
-    });
-  }
-  let sidebar = document.querySelector(".sidebar");
-  let sidebarBtn = document.querySelector(".bx-menu");
-  console.log(sidebarBtn);
-  sidebarBtn.addEventListener("click", ()=>{
-    sidebar.classList.toggle("close");
-  });
-  </script>
-  </body>
-  <script>
-    
-  const form = document.querySelector("#registro");
-  const cedulaInput = document.querySelector("#cedula");
-  const buscarButton = document.querySelector("#buscarButton");
-  const eliminarButton = document.querySelector("#eliminarButton");
+      let arrow = document.querySelectorAll(".arrow");
+      for (var i = 0; i < arrow.length; i++) {
+        arrow[i].addEventListener("click", (e)=>{
+        let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+        arrowParent.classList.toggle("showMenu");
+        });
+      }
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".bx-menu");
+      console.log(sidebarBtn);
+      sidebarBtn.addEventListener("click", ()=>{
+        sidebar.classList.toggle("close");
+      });
+      const form = document.querySelector("#registro");
+      const cedulaInput = document.querySelector("#cedula");
+      const buscarButton = document.querySelector("#buscarButton");
+      const eliminarButton = document.querySelector("#eliminarButton");
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    sendData();
-  });
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        sendData();
+      });
 
-  buscarButton.addEventListener("click", () => {
-    findById();
-  });
+      buscarButton.addEventListener("click", () => {
+        findById();
+      });
 
-  eliminarButton.addEventListener("click", () => {
-    deleteById();
-  });
-
-</script>
+      eliminarButton.addEventListener("click", () => {
+        deleteById();
+      });
+      </script>
+      </body>
 </html>
