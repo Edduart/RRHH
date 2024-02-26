@@ -1,4 +1,4 @@
-//funcion para enviar la data del form a la API
+//funciones para enviar la data del form a la API
 
 const { response } = require("express");
 
