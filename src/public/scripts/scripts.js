@@ -2,6 +2,8 @@
 
 const { response } = require("express");
 
+//script para enviar data a la api > registar y actualizar
+
 async function sendData() {
   const formData = new FormData(form);
   const clickedButton = event.submitter;
@@ -34,6 +36,8 @@ async function sendData() {
     console.error(error);
   }
 }
+
+//script para buscar por ID > buscar
 
 async function findById() {
   const cedulaValue = cedulaInput.value;
@@ -69,6 +73,8 @@ async function findById() {
   }
 }
 
+//script para para eliminar > eliminar
+
 async function deleteById(){
   const cedulaValue = cedulaInput.value;
   console.log("Cedula ingresada:", cedulaValue);
@@ -92,7 +98,9 @@ async function deleteById(){
 
 }
 
-// Take over form submission
+//script para buscar todo > PENDIENTE
+
+// solo para probar
 function test(){
   alert("Hello Javatpoint");  
 }
