@@ -4,8 +4,10 @@
   <head>
     <meta charset="UTF-8">
     <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
-    <link rel="stylesheet" href="style.css">
-    <!-- Boxiocns CDN Link -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <!--aqui se encuentra el script del index-->
+    <script type="text/javascript" src="./scripts/scripts.js"></script>
+    <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -162,16 +164,21 @@
 <body>
   <section class="form-register">
     <h4>Registro Empleados</h4>
-    <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
-    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
-    <input class="controls" type="text" name="cedula" id="apellidos" placeholder="Ingrese su cedula">
-    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
-    <input class="controls" type="varchar" name="address" id="address" placeholder="Direccion">
-    <input class="controls" type="varchar" name="telefono" id="telefono" placeholder="Numero de telefono">
-   
-    <input class="botons1" type="submit" value="Registrar">
-    <input class="botons2" type="submit" value="Cerrar">
-   
+    <form id="registro">
+      <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+      <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+      <input class="controls" type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula">
+      <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+      <input class="controls" type="varchar" name="address" id="address" placeholder="Direccion">
+      <input class="controls" type="varchar" name="telefono" id="telefono" placeholder="Numero de telefono">
+     
+      <input class="botons1" type="submit" value="Registrar">
+      <input class="botons3" id="buscarButton" value="Buscar">
+      <!--<button type="button" id="buscarButton">Buscar</button>-->
+      <!--<button type="button" id="eliminarButton">Eliminar</button>-->
+      <input class="botons4" id="eliminarButton" value="Eliminar">
+      <input class="botons2" type="submit" value="Cerrar">
+    </form>
   </section>
 
 </body>
@@ -196,4 +203,26 @@
   });
   </script>
 </body>
+
+<script>
+
+  const form = document.querySelector("#registro");
+  const cedulaInput = document.querySelector("#cedula");
+  const buscarButton = document.querySelector("#buscarButton");
+  const eliminarButton = document.querySelector("#eliminarButton");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendData();
+  });
+
+  buscarButton.addEventListener("click", () => {
+    findById();
+  });
+
+  eliminarButton.addEventListener("click", () => {
+    deleteById();
+  });
+
+</script>
 </html>
