@@ -43,6 +43,8 @@ class UserController {
   //funcion de crear 
 
   create = async (req, res = response) => {
+    const { cedula, nombre, apellido, correo, telefono } = req.body;
+    console.log(req.body);
     try {
       const { cedula, nombre, apellido, correo, telefono } = req.body;
       let create = await User.create( { cedula, nombre, apellido, correo, telefono } );

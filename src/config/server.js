@@ -1,4 +1,5 @@
-const express = require('express');//asi se llama un archivo de dependencia
+const express = require('express');
+const bodyParser = require('body-parser')
 const db = require("./db.js")
 const cors = require('cors');
 const path = require('path');
@@ -30,6 +31,7 @@ class server{
 
     middlewares() {
         this.app.use(cors());
+        this.app.use(express.urlencoded({ extended: true }))
         this.app.use(express.json());
         this.app.use(express.static("./src/public"));
     }

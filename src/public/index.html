@@ -1,29 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./styles/style.css" />
-    <title>MAIN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script type="text/javascript" src="./scripts/scripts.js"></script>
+    <title>Registro Empleados</title>
   </head>
   <body>
-    <h1>HTML ON</h1>
-    <p1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est
-      ullamcorper eget. Eget duis at tellus at urna condimentum mattis
-      pellentesque. Pulvinar sapien et ligula ullamcorper malesuada proin libero
-      nunc consequat. Pharetra massa massa ultricies mi quis hendrerit dolor
-      magna eget. Leo integer malesuada nunc vel risus. Morbi blandit cursus
-      risus at ultrices mi. Augue mauris augue neque gravida. Tellus orci ac
-      auctor augue mauris augue neque gravida. Amet consectetur adipiscing elit
-      duis tristique sollicitudin nibh sit. Egestas egestas fringilla phasellus
-      faucibus. Nulla at volutpat diam ut venenatis tellus in. Fermentum iaculis
-      eu non diam phasellus vestibulum lorem. At tempor commodo ullamcorper a
-      lacus vestibulum sed arcu non. Elementum curabitur vitae nunc sed velit.
-      Semper eget duis at tellus at urna condimentum mattis pellentesque.
-      Lobortis feugiat vivamus at augue eget arcu dictum varius duis. Orci
-      dapibus ultrices in iaculis nunc.</p1>
-
-      <a href="sesion" class="action_btn">Login</a>
+    <section class="form-register">
+      <h4>Registro Empleados</h4>
+      <form id="registro">
+        <div>
+          <label for="cedula">Cedula:</label>
+          <input type="text" id="cedula" name="cedula" value />
+          <button type="button" id="buscarButton">Buscar</button>
+        </div>
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" value />
+        </div>
+        <div>
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" name="apellido" value />
+        </div>
+        <div>
+          <label for="correo">Correo:</label>
+          <input type="text" id="correo" name="correo" value />
+        </div>
+        <div>
+          <label for="telefono">Telefono:</label>
+          <input type="text" id="telefono" name="telefono" value />
+        </div>
+        <input class="botons1" name="registar" type="submit" value="Registar">
+        <input class="botons1" name="actualizar" type="submit" value="Actualizar">
+      </form>
+    </section>
   </body>
+  <script>
+
+    const form = document.querySelector("#registro");
+    const cedulaInput = document.querySelector("#cedula");
+    const buscarButton = document.querySelector("#buscarButton");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      sendData();
+    });
+
+    buscarButton.addEventListener("click", () => {
+      findById();
+    });
+
+  </script>
 </html>

@@ -1,9 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/db.js")
 
-//const Sequelize = new sequelize();
-//const { v4: uuidv4 } = require('uuid');
-
 class User extends Model {}
 
 User.init( //revisar tipos de datos
