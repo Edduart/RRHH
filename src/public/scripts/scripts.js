@@ -20,6 +20,7 @@ async function sendData() {
         },
         body: JSON.stringify(jsonObject), 
       });
+      alert("Usuario creado!"); 
       console.log(await response.json());
     } else if (clickedButton.name === "actualizar"){
       const cedulaValue = cedulaInput.value;
@@ -31,6 +32,7 @@ async function sendData() {
         body: JSON.stringify(jsonObject), 
       });
       console.log(await response.json());
+      alert("Usuario actualizado!"); 
     }
   } catch (error) {
     console.error(error);
@@ -65,6 +67,7 @@ async function findById() {
       apellidoInput.value = apellido;
       correoInput.value = correo;
       telefonoInput.value = telefono;
+      alert("usuario encontrado!");
     }).catch((error) => {
       console.log(error)
     })
@@ -88,6 +91,7 @@ async function deleteById(){
         throw new Error("La cedula no existe!");
       }
       console.log(response.json());
+      alert("Usuario eliminado!");
       return 1;
     }).catch((error) => {
       console.log(error);
