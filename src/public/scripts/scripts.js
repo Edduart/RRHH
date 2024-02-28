@@ -85,7 +85,7 @@ async function deleteById() {
 
   try {
     fetch("http://localhost:3000/api/users/" + cedulaValue, { method: "DELETE" })
-      .then(async (response) => {
+    .then(async (response) => {
         if (!response.ok) {
           alert("La cedula no existe!");
           throw new Error("La cedula no existe!");
