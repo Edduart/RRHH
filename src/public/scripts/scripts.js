@@ -46,10 +46,12 @@ async function findById() {
 
   try {
     fetch("http://localhost:3000/api/users/"+cedulaValue, {method: "GET"})
-    .then((response) => {
+    .then(async (response) => {
       if(!response.ok){
         alert("La cedula no existe!");
         throw new Error("La cedula no existe!");
+      } else {
+        console.log(await response.json());
       }
       return response.json()
     })
@@ -65,7 +67,8 @@ async function findById() {
       apellidoInput.value = apellido;
       correoInput.value = correo;
       telefonoInput.value = telefono;
-    }).catch((error) => {
+    })
+    .catch((error) => {
       console.log(error)
     })
   } catch (error) {
@@ -75,27 +78,28 @@ async function findById() {
 
 //script para para eliminar > eliminar
 
-async function deleteById(){
+async function deleteById() {
   const cedulaValue = cedulaInput.value;
   console.log("Cedula ingresada:", cedulaValue);
   console.log("evento eliminar activado")
 
   try {
-    fetch("http://localhost:3000/api/users/"+cedulaValue, {method: "DELETE"})
-    .then((response) => {
-      if(!response.ok){
-        alert("La cedula no existe!");
-        throw new Error("La cedula no existe!");
-      }
-      console.log(response.json());
-      return 1;
-    }).catch((error) => {
-      console.log(error);
-    })
+    fetch("http://localhost:3000/api/users/" + cedulaValue, { method: "DELETE" })
+      .then(async (response) => {
+        if (!response.ok) {
+          alert("La cedula no existe!");
+          throw new Error("La cedula no existe!");
+        } else {
+          console.log(await response.json());
+        }
+        return 1;
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   } catch (error) {
     console.error(error);
   }
-
 }
 
 //script para buscar todo > PENDIENTE
