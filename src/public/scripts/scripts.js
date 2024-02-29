@@ -20,6 +20,7 @@ async function sendData() {
         },
         body: JSON.stringify(jsonObject), 
       });
+      alert("Usuario creado!"); 
       console.log(await response.json());
     } else if (clickedButton.name === "actualizar"){
       const cedulaValue = cedulaInput.value;
@@ -31,6 +32,7 @@ async function sendData() {
         body: JSON.stringify(jsonObject), 
       });
       console.log(await response.json());
+      alert("Usuario actualizado!"); 
     }
   } catch (error) {
     console.error(error);
@@ -53,7 +55,7 @@ async function findById() {
       } else {
         console.log(await response.json());
       }
-      return response.json()
+      return await response.json()
     })
     .then((data) => {
       //cedulaInput.disabled = true;
@@ -67,8 +69,8 @@ async function findById() {
       apellidoInput.value = apellido;
       correoInput.value = correo;
       telefonoInput.value = telefono;
-    })
-    .catch((error) => {
+      alert("usuario encontrado!");
+    }).catch((error) => {
       console.log(error)
     })
   } catch (error) {
@@ -84,19 +86,18 @@ async function deleteById() {
   console.log("evento eliminar activado")
 
   try {
-    fetch("http://localhost:3000/api/users/" + cedulaValue, { method: "DELETE" })
+    fetch("http://localhost:3000/api/users/"+cedulaValue, {method: "DELETE"})
     .then(async (response) => {
-        if (!response.ok) {
-          alert("La cedula no existe!");
-          throw new Error("La cedula no existe!");
-        } else {
-          console.log(await response.json());
-        }
-        return 1;
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+      if(!response.ok){
+        alert("La cedula no existe!");
+        throw new Error("La cedula no existe!");
+      }
+      console.log(await response.json());
+      alert("Usuario eliminado!");
+      return 1;
+    }).catch((error) => {
+      console.log(error);
+    })
   } catch (error) {
     console.error(error);
   }
