@@ -48,12 +48,12 @@ async function findById() {
 
   try {
     fetch("http://localhost:3000/api/users/"+cedulaValue, {method: "GET"})
-    .then((response) => {
+    .then(async (response) => {
       if(!response.ok){
         alert("La cedula no existe!");
         throw new Error("La cedula no existe!");
       }
-      return response.json()
+      return await response.json()
     })
     .then((data) => {
       //cedulaInput.disabled = true;
@@ -85,12 +85,12 @@ async function deleteById(){
 
   try {
     fetch("http://localhost:3000/api/users/"+cedulaValue, {method: "DELETE"})
-    .then((response) => {
+    .then(async (response) => {
       if(!response.ok){
         alert("La cedula no existe!");
         throw new Error("La cedula no existe!");
       }
-      console.log(response.json());
+      console.log(await response.json());
       alert("Usuario eliminado!");
       return 1;
     }).catch((error) => {
