@@ -53,9 +53,10 @@ async function findById() {
         alert("La cedula no existe!");
         throw new Error("La cedula no existe!");
       } else {
-        console.log(await response.json());
+        let res = await response.json()
+        console.log(res.users);
+        return res;
       }
-      return await response.json()
     })
     .then((data) => {
       //cedulaInput.disabled = true;
@@ -94,7 +95,7 @@ async function deleteById() {
       }
       console.log(await response.json());
       alert("Usuario eliminado!");
-      return 1;
+      return ;
     }).catch((error) => {
       console.log(error);
     })
@@ -104,6 +105,8 @@ async function deleteById() {
 }
 
 //script para buscar todo > PENDIENTE
+
+//mostar en modal
 
 // solo para probar
 function test(){
