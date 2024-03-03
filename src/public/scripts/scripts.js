@@ -105,24 +105,39 @@ async function deleteById() {
 }
 
 //script para buscar todo > PENDIENTE
-/*async function getList(){
+
+async function getList(){
+
+  //const listaInput = document.querySelector("#listar");
+
+  //console.log("Cedula ingresada:", cedulaValue);
+  console.log("evento listar activado")
   try{
     fetch("http://localhost:3000/api/users/", {method: "GET"})
     .then(async (response) => {
       if(!response.ok){
-        alert("No se encuentran registros en la lista!");
+        //alert("No se encuentran registros en la lista!");
         throw new Error("No se encuentran registros en la lista!");
       }
       //console.log(await response.json());
-      alert("Lista");
-      return response.json();
+      //alert("Lista");
+      return response.json();// < respuesta 
     })
-    .then()
+    .then((datos) => {
+
+      const lista = datos.users;
+      console.log(lista)
+
+      lista.forEach((usuario)=>{
+          let tr = document.createElement('tr');
+          tr.innerText = usuario.cedula;
+          listaInput.appendChild(tr);
+      })
+    })
   }catch(error){
     console.error(error);
   }
-
-}*/
+}
 //mostar en modal
 
 // solo para probar
