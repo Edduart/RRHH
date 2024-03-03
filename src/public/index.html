@@ -142,7 +142,7 @@
       </head>
       <body>
         <section class="form-register">
-          <h4>Registro Empleados</h4>
+          <h4>Registro Empleados</h4> 
           <form id="registro">
             <label for="cedula">Ingrese la cedula (busqueda por cedula):</label>
             <input class="controls" type="text" pattern="[0-9]{8-10}" title="8 digitos" name="cedula" id="cedula" placeholder="Ingrese su cedula"  required>
@@ -159,6 +159,7 @@
             <input class="botons1" name="actualizar" type="submit" value="Actualizar">
             <input class="botons1" type="button" id="buscarButton" value="Buscar">
             <input class="botons1" type="button" id="eliminarButton" value="Eliminar">
+            <!--<input class="botons1" type="button" id="listarButton" value="Listar">-->
 
           </form>
         </section>
@@ -183,6 +184,7 @@
       const cedulaInput = document.querySelector("#cedula");
       const buscarButton = document.querySelector("#buscarButton");
       const eliminarButton = document.querySelector("#eliminarButton");
+     // const listarButton = document.querySelector("#listarButton");
 
       form.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -196,6 +198,10 @@
       eliminarButton.addEventListener("click", () => {
         deleteById();
       });
+
+      /*listarButton.addEventListener("click", () => {
+        getList();
+      });*/
       </script>
       </body>
 </html>

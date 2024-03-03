@@ -105,7 +105,24 @@ async function deleteById() {
 }
 
 //script para buscar todo > PENDIENTE
+/*async function getList(){
+  try{
+    fetch("http://localhost:3000/api/users/", {method: "GET"})
+    .then(async (response) => {
+      if(!response.ok){
+        alert("No se encuentran registros en la lista!");
+        throw new Error("No se encuentran registros en la lista!");
+      }
+      //console.log(await response.json());
+      alert("Lista");
+      return response.json();
+    })
+    .then()
+  }catch(error){
+    console.error(error);
+  }
 
+}*/
 //mostar en modal
 
 // solo para probar
