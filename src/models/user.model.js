@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/db.js")
+//const Contrato = require("./contrato.model.js");
 
 class User extends Model {}
 
@@ -33,10 +34,25 @@ User.init( //revisar tipos de datos
         }
     },{
         sequelize, // instacia de sequelize => base de datos
-        modelName: 'personal', // Nombre del modelo en sequelize
+        modelName: 'User', // Nombre del modelo en sequelize
         tableName: 'personal', // Nombre directo de la tabla
         timestamps: false 
-    })
+    }
+)
+
+const relation = async() => {
+    const {Contrato, User, Asistencia, Nomina} = await sequelize.models;
+
+    User.hasOne(Contrato, {
+        foreignKey: 'cedula'
+    });
+
+    User.hasOne(Asistencia, {
+        foreignKey: 'cedula'
+    });
+}
+
+relation();
 
 module.exports = User;
 

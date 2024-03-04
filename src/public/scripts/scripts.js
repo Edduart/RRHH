@@ -124,17 +124,36 @@ async function getList(){
       return response.json();// < respuesta 
     })
     .then((datos) => {
-
       const lista = datos.users;
       console.log(lista)
+      if (lista !== null) {
+        console.log('tabla iniciada');
+        const headers = ['Cedula', 'Nombre', 'Apellido', 'Correo', 'Telefono'];
 
-      lista.forEach((usuario)=>{
-          let tr = document.createElement('tr');
-          tr.innerText = usuario.cedula;
-          listaInput.appendChild(tr);
-      })
+        const tr = document.createElement('tr');
+        headers.forEach((i) => {
+          const th = document.createElement('th');
+          th.innerText = i;
+          tr.appendChild(th);
+        })
+        listaInput.appendChild(tr);
+
+        lista.forEach((usuario) => {
+          let tri = document.createElement('tr');
+          //console.log(Object.keys(usuario).length);
+          Object.keys(usuario).forEach((value) => {
+            let td = document.createElement('td');
+            td.innerText = usuario[value];
+            listaInput.appendChild(tri).appendChild(td);
+          })
+        })
+      } else {
+        let parrafo = document.createElement('p');
+        parrafo.innerText = 'la lista es nula';
+        listaInput.appendChild(parrafo);
+      }
     })
-  }catch(error){
+  } catch (error) {
     console.error(error);
   }
 }

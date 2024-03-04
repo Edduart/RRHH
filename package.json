@@ -1,6 +1,6 @@
 {
     "name": "rrhh",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Este es el modulo de RRHH de ecomoda",
     "main": "index.js",
     "scripts": {

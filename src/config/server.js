@@ -1,8 +1,8 @@
 const express = require('express');
-const bodyParser = require('body-parser')
+//const bodyParser = require('body-parser')
 const db = require("./db.js")
 const cors = require('cors');
-const path = require('path');
+//const path = require('path');
 
 
 class server{
@@ -14,6 +14,11 @@ class server{
         this.pre = "/api";
         this.paths = {
             users: this.pre + "/users",
+            contratos: this.pre + "/contratos",
+            asistencia: this.pre + "/asistencia",
+            nomina: this.pre + "/nomina",
+            detalle: this.pre + "/detalle",
+            concepto: this.pre + "/concepto"
           };
         this.routes();
         this.startDb();
@@ -50,6 +55,11 @@ class server{
             next();
         });
         this.app.use(this.paths.users, require("../routes/user.routes"));
+        this.app.use(this.paths.contratos, require("../routes/contrato.routes.js"));
+        this.app.use(this.paths.asistencia, require("../routes/asistencia.routes.js"));
+        this.app.use(this.paths.nomina, require("../routes/nomina.routes.js"));
+        this.app.use(this.paths.detalle, require("../routes/detalle.routes.js"));
+        this.app.use(this.paths.concepto, require("../routes/concepto.routes.js"));
     }
 }
 
