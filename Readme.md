@@ -1,4 +1,4 @@
-### ECOMODA - RRHH (WORK IN PROGRESS)
+# ECOMODA - RRHH (WORK IN PROGRESS)
 
 ## Descripción del proyecto:
 
@@ -31,7 +31,7 @@ Para usar este proyecto, debes seguir estos pasos:
 * MySql 
 * Postman
 
-# Enunciado del proyecto
+### Enunciado del proyecto
 
 En la empresa de diseño de modas ECOMODA, la directiva realiza una reunión trimestral donde se presentan los informes detallados de cada departamento a los accionistas y jefes de los mismos. En la última reunión, se reportó 
 que la empresa está en crisis y que los reportes no estuvieron a tiempo, ya que tuvieron inconsistencias en las cuentas y en los datos relacionados con los otros departamentos. Se observa que hubo un gran fraude, ya que no se explica 
