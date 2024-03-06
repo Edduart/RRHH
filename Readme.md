@@ -1,14 +1,13 @@
-# ECOMODA - RRHH (WORK IN PROGRESS)
+# ECOMODA - RRHH (*WORK IN PROGRESS*)
 
 ## Descripción del proyecto:
 
-Modulo backend de recursos humanos del proyecto "ECOMODA" se encarga de: , los contratos, los sueldos, de calcular 
-las horas extras, de las vacantes de cada área, etc.
+Modulo backend de recursos humanos del proyecto "ECOMODA" se encarga de: los contratos, los sueldos, de calcular las horas extras, de las vacantes de cada área, etc.
 
 ## Funcionalidades
 
 * Registro de personal, ~~Contratos, gestion de asistencia (horas extra) y nomina.~~
-* ~~ Calculo de sueldos y nomina.~~
+* ~~Calculo de sueldos y nomina.~~
 
 
 ## Instalacion y uso
