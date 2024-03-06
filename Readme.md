@@ -1,6 +1,4 @@
-### WORK IN PROGRESS
-
-### ECOMODA - RRHH
+### ECOMODA - RRHH (WORK IN PROGRESS)
 
 ## Descripción del proyecto:
 
